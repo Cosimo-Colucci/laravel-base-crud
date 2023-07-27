@@ -12,7 +12,7 @@ return new class extends Migration
      * @return void
      */
     public function up(){
-        Schema::create('lidi', function (Blueprint $table)
+        Schema::create('shores', function (Blueprint $table)
             {
                     $table->id();
                     $table->timestamps();
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lidi');
+        Schema::dropIfExists('shores');
     }
 };
