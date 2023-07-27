@@ -48,7 +48,8 @@ class PageController extends Controller
      */
     public function show($id)
     {
-        //
+        $shore = Shore::findOrFail($id);
+        return view('admin.shores.show', compact('shore'));
     }
 
     /**
