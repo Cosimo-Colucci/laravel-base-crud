@@ -15,7 +15,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        //
+        $shoreList = Shore::all();
+        return view('admin.shores.index', compact('shoreList'));
     }
 
     /**
