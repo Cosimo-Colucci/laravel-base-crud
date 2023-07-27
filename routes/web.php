@@ -14,3 +14,4 @@ use App\Http\Controllers\Admin\PageController as AdminPageController;
 */
 
 Route::get('/',[AdminPageController::class,'index'])->name('admin.shores.index');
+Route::get  ('admin/shores/{id}',        [AdminPageController::class, 'show'  ])->name('admin.shores.show');
