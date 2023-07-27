@@ -44,6 +44,9 @@
                         <th scope="col">
                             Has_soccer_field
                         </th>
+                        <th scope="col">
+                            Actions
+                        </th>
 
                     </tr>
                 </thead>
@@ -79,7 +82,9 @@
                         <td>
                             <p> {{ $shore->has_soccer_field ? 'Yes' : 'No' }} </p>
                         </td>
-                        
+                        <td>
+                            <a class="btn btn-sm btn-primary" href="{{route('admin.shores.show', $shore->id)}}">View</a>
+                        </td>
                     </tr>
                 </tbody>
                 @endforeach
