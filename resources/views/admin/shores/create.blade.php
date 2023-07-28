@@ -10,9 +10,19 @@
     </h1>
     <div class="row">
         <div class="card col-12" >
+            <div class="col-8">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+            </div>
             <form action="{{route('admin.shores.store')}}" method="POST">
             @csrf
-
                 <div class="mb-3">
                     <label for="name" class="form-label">
                         Name
