@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Shore;
+use Illuminate\Validation\Rule;
 
 class PageController extends Controller
 {
@@ -37,7 +38,17 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            "name"=>"required|unique:shores|max:200|min:3",
+            "location"=>"required|max:200|min:3",
+            "number_of_umbrellas"=>"required|min:1|integer",
+            "number_of_bed"=>"required|min:1|integer",
+            "price"=>"required|max:100|min:0",
+            "opening_date"=>"required|date",
+            "closing_date"=>"required|date",
+            "has_volley_beach"=>"required|boolean",
+            "has_soccer_field"=>"required|boolean"
+        ]);
         $newShore = new Shore();
         $newShore->fill($data);
         $newShore->save();
