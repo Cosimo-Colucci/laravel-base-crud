@@ -88,7 +88,17 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            "name" => ["required", "min:3", "max:255", Rule::unique('shores')->ignore($id)],
+            "location"=>"required|max:200|min:3",
+            "number_of_umbrellas"=>"required|min:1|integer",
+            "number_of_bed"=>"required|min:1|integer",
+            "price"=>"required|max:100|min:0",
+            "opening_date"=>"required|date",
+            "closing_date"=>"required|date",
+            "has_volley_beach"=>"required|boolean",
+            "has_soccer_field"=>"required|boolean"
+        ]);
         $shore = Shore::findOrFail($id);
         $shore->update($data);
         return redirect()->route('admin.shores.show', $shore->id);
