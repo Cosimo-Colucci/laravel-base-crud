@@ -89,6 +89,13 @@
                         <td class="">
                             <a class="btn btn-sm btn-primary" href="{{route('admin.shores.show', $shore->id)}}">View</a>
                             <a class="btn btn-sm btn-warning" href="{{route('admin.shores.edit', $shore->id)}}">Edit</a>
+
+                            <form action="{{ route('admin.shores.destroy', $shore->id) }}" class="form-delete d-inline-block m-1" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-secondary me-2">Delete</button>
+                            </form>
+
                         </td>
                     </tr>
                 </tbody>
