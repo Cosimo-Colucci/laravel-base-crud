@@ -91,6 +91,8 @@ class PageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $shore = Shore::findOrFail($id);
+        $shore->delete();
+        return redirect()->route('admin.shores.index');
     }
 }
