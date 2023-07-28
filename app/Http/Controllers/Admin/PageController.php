@@ -64,7 +64,8 @@ class PageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $shore = Shore::findOrFail($id);
+        return view('admin.shores.edit', compact('shore'));
     }
 
     /**
@@ -76,7 +77,10 @@ class PageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $shore = Shore::findOrFail($id);
+        $shore->update($data);
+        return redirect()->route('admin.shores.show', $shore->id);
     }
 
     /**
