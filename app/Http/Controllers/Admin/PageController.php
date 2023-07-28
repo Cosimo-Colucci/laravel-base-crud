@@ -26,7 +26,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.shores.create');
     }
 
     /**
@@ -37,7 +37,11 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $newShore = new Shore();
+        $newShore->fill($data);
+        $newShore->save();
+        return redirect()->route('admin.shores.show',$newShore->id);
     }
 
     /**
