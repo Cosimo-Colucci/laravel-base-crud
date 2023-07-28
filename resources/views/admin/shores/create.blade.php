@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Create Comic Page')
+@section('title', 'Add A New Shore')
 
 @section('main-content')
 
@@ -14,44 +14,44 @@
             @csrf
 
                 <div class="mb-3">
-                    <label for="title" class="form-label">
+                    <label for="name" class="form-label">
                         Name
                     </label>
                     <input type="text" class="form-control" id="name" name="name">
                 </div>
                 <div class="mb-3">
-                    <label for="description" class="form-label">
+                    <label for="location" class="form-label">
                         Location
                     </label>
                     <input type="text" class="form-control" id="location" name="location">
                 </div>
                 <div class="mb-3">
-                    <label for="thumb" class="form-label">
+                    <label for="number_of_umbrellas" class="form-label">
                         Number of umbrellas
                     </label>
                     <input type="text" class="form-control" id="number_of_umbrellas" name="number_of_umbrellas">
                 </div>
                 <div class="mb-3">
-                    <label for="price" class="form-label">
+                    <label for="number_of_bed" class="form-label">
                         Number of bed
                     </label>
                     <input type="text" class="form-control" id="number_of_bed" name="number_of_bed">
                 </div>
                 <div class="mb-3">
-                    <label for="series" class="form-label">
+                    <label for="price" class="form-label">
                         Price
                     </label>
                     <input type="text" class="form-control" id="price" name="price">
                 </div>
 ___
 <div class="mb-3">
-                    <label for="sale_date" class="form-label">
+                    <label for="opening_date" class="form-label">
                         Opening_date
                     </label>
                     <input type="date" class="form-control" id="opening_date" name="opening_date">
                 </div>
                 <div class="mb-3">
-                    <label for="type" class="form-label">
+                    <label for="closing_date" class="form-label">
                         Closing_date
                     </label>
                     <input type="date" class="form-control" id="closing_date" name="closing_date">

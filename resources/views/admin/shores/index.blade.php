@@ -6,9 +6,13 @@
 
 <div class="container">
 
+
     <h1 class="mb-5">
         Shores Index
     </h1>
+
+    <a class="btn btn-sm btn-secondary" href="{{route('admin.shores.create')}}">Create a new Shore</a>
+
     <div class="row">
         <div class="col-12">
             <table class="table table-striped table-hover">
@@ -82,8 +86,9 @@
                         <td>
                             <p> {{ $shore->has_soccer_field ? 'Yes' : 'No' }} </p>
                         </td>
-                        <td>
+                        <td class="">
                             <a class="btn btn-sm btn-primary" href="{{route('admin.shores.show', $shore->id)}}">View</a>
+                            <a class="btn btn-sm btn-warning" href="{{route('admin.shores.edit', $shore->id)}}">Edit</a>
                         </td>
                     </tr>
                 </tbody>
