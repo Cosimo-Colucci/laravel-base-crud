@@ -19,3 +19,4 @@ Route::post('/', [AdminPageController::class, 'store'])->name('admin.shores.stor
 Route::get('/edit/shores/{id}', [AdminPageController::class, 'edit'])->name('admin.shores.edit');
 Route::put('/shores/{id}', [AdminPageController::class, 'update'])->name('admin.shores.update');
 Route::get  ('admin/shores/{id}',        [AdminPageController::class, 'show'  ])->name('admin.shores.show');
+Route::delete('/shores/{id}', [AdminPageController::class, 'destroy'])->name('admin.shores.destroy');
