@@ -16,4 +16,6 @@ use App\Http\Controllers\Admin\PageController as AdminPageController;
 Route::get('/',[AdminPageController::class,'index'])->name('admin.shores.index');
 Route::get('/create/shores', [AdminPageController::class, 'create'])->name('admin.shores.create');
 Route::post('/', [AdminPageController::class, 'store'])->name('admin.shores.store');
+Route::get('/edit/shores/{id}', [AdminPageController::class, 'edit'])->name('admin.shores.edit');
+Route::put('/shores/{id}', [AdminPageController::class, 'update'])->name('admin.shores.update');
 Route::get  ('admin/shores/{id}',        [AdminPageController::class, 'show'  ])->name('admin.shores.show');
