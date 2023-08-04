@@ -8,7 +8,7 @@
 
 
     <h1 class="mb-5">
-        Shores Index
+        Shores Index-
     </h1>
 
     <div class="row">
